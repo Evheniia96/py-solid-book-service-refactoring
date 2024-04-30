@@ -1,6 +1,6 @@
 import json
 from abc import ABC, abstractmethod
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET # noqa
 from app.books import Book
 
 

@@ -7,7 +7,7 @@ from app.serializers import SerializerBook
 def main(book: Book, commands: list[tuple[str, str]]) -> None | str:
     for cmd, method_type in commands:
         if cmd == "display":
-            DisplayBook.display(book,method_type)
+            DisplayBook.display(book, method_type)
         elif cmd == "print":
             PrintBook.print_book(book, method_type)
         elif cmd == "serialize":
