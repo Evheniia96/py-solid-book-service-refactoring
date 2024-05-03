@@ -1,6 +1,6 @@
 import json
 from abc import ABC, abstractmethod
-import xml.etree.ElementTree as ET # noqa
+import xml.etree.ElementTree as ET  # noqa
 from app.books import Book
 
 
@@ -23,14 +23,3 @@ class SerializerXML(Serializer):
         content = ET.SubElement(root, "content")
         content.text = book.content
         return ET.tostring(root, encoding="unicode")
-
-
-class SerializerBook:
-    @staticmethod
-    def serialize(book: Book, serialize_type: str) -> str:
-        if serialize_type == "json":
-            return SerializerJSON().serialize(book)
-        elif serialize_type == "xml":
-            return SerializerXML().serialize(book)
-        else:
-            raise ValueError(f"Unknown serialize type: {serialize_type}")
